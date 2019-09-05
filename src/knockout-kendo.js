@@ -1,10 +1,10 @@
 ;(function(factory) {
     // CommonJS
     if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-        factory(require('knockout'), require('jquery'), require('kendo'));
+        factory(require('knockout'), require('jquery'), require('@progress/kendo-ui/js/kendo.core'));
         // AMD
     } else if (typeof define === 'function' && define.amd) {
-        define(['knockout', 'jquery', 'kendo'], factory);
+        define(['knockout', 'jquery', '@progress/kendo-ui/js/kendo.core'], factory);
         // Normal script tag
     } else {
         factory(window.ko, window.jQuery, window.kendo);
