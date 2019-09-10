@@ -9,11 +9,7 @@ ko.kendo.BindingFactory = function() {
     var self = this;
 
     this.createBinding = function(widgetConfig) {
-        //only support widgets that are available when this script runs
-        if (!$()[widgetConfig.parent || widgetConfig.name]) {
-            return;
-        }
-
+        
         var binding = {};
 
         //the binding handler's init function
