@@ -52,10 +52,15 @@ ko.kendo.BindingFactory = function() {
             if (widget.destroy) {
                 ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
                     if (widget.element) {
-                        if (typeof kendo.destroy === "function") {
-                            kendo.destroy(widget.element);
-                        } else {
-                            widget.destroy();
+                        try{
+                            if (typeof kendo.destroy === "function") {
+                                kendo.destroy(widget.element);
+                            } else {
+                                widget.destroy();
+                            }
+                        }
+                        catch (err) {
+                            console.error(err);
                         }
                     }
                 });
