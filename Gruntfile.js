@@ -10,8 +10,8 @@ module.exports = function(grunt) {
                     includeRegexp: /^\/\/\s*import\s+['"]?([^'"]+)['"]?\s*$/,
                     banner: '<%= header %>\n'
                 },
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.js',
+                src: 'src/knockout-kendo.js',
+                dest: 'build/knockout-kendo.js',
                 flatten: true,
                 cwd: '.'
             }
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
                 banner: '<%= header %>\n'
             },
             build: {
-                src: 'build/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
+                src: 'build/knockout-kendo.js',
+                dest: 'build/knockout-kendo.min.js'
             }
         },
         jshint: {

@@ -1,5 +1,5 @@
 /*
- * knockout-kendo 0.10.0
+ * knockout-kendo 0.10.1
  * Copyright © 2017 Ryan Niemeyer & Telerik
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
