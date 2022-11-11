@@ -1,7 +1,3 @@
-//handle require.js scenarios where kendo is not actually returned
-kendo = kendo || window.kendo;
-$ = kendo.jQuery || $ ;
-ko.kendo = ko.kendo || {};
 
 var unwrap = ko.utils.unwrapObservable; //support older 2.x KO where ko.unwrap was not defined
 

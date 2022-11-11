@@ -1,5 +1,5 @@
 /*
- * knockout-kendo 0.10.1
+ * knockout-kendo 0.11.0
  * Copyright © 2017 Ryan Niemeyer & Telerik
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,23 +15,15 @@
  * limitations under the License.
  */
 
-;(function(factory) {
-    // CommonJS
-    if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-        factory(require('knockout'), require('jquery'), require('@progress/kendo-ui/js/kendo.core'));
-        // AMD
-    } else if (typeof define === 'function' && define.amd) {
-        define(['knockout', 'jquery', '@progress/kendo-ui/js/kendo.core'], factory);
-        // Normal script tag
-    } else {
-        factory(window.ko, window.jQuery, window.kendo);
-    }
-}(function(ko, $, kendo, undefined) {
+import ko from "knockout";
 
-//handle require.js scenarios where kendo is not actually returned
-kendo = kendo || window.kendo;
-$ = kendo.jQuery || $ ;
+import '@progress/kendo-ui/esm/kendo.data.js'
+const kendo = window.kendo;
+const jQuery =window.kendo.jQuery;
+const $ = jQuery;
+
 ko.kendo = ko.kendo || {};
+
 
 var unwrap = ko.utils.unwrapObservable; //support older 2.x KO where ko.unwrap was not defined
 
@@ -346,7 +338,7 @@ var openIfVisible = function(value, options) {
 
 
 //library is in a closure, use this private variable to reduce size of minified file
-var createBinding = ko.kendo.bindingFactory.createBinding.bind(ko.kendo.bindingFactory);
+export const createBinding = ko.kendo.bindingFactory.createBinding.bind(ko.kendo.bindingFactory);
 
 //use constants to ensure consistency and to help reduce minified file size
 var CLICK = "click",
@@ -1349,5 +1341,3 @@ createBinding({
         }
     }
 });
-
-}));

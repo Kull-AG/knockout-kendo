@@ -1,5 +1,5 @@
 //library is in a closure, use this private variable to reduce size of minified file
-var createBinding = ko.kendo.bindingFactory.createBinding.bind(ko.kendo.bindingFactory);
+export const createBinding = ko.kendo.bindingFactory.createBinding.bind(ko.kendo.bindingFactory);
 
 //use constants to ensure consistency and to help reduce minified file size
 var CLICK = "click",

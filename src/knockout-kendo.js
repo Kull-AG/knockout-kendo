@@ -1,15 +1,11 @@
-;(function(factory) {
-    // CommonJS
-    if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-        factory(require('knockout'), require('jquery'), require('@progress/kendo-ui/js/kendo.core'));
-        // AMD
-    } else if (typeof define === 'function' && define.amd) {
-        define(['knockout', 'jquery', '@progress/kendo-ui/js/kendo.core'], factory);
-        // Normal script tag
-    } else {
-        factory(window.ko, window.jQuery, window.kendo);
-    }
-}(function(ko, $, kendo, undefined) {
+import ko from "knockout";
+
+import '@progress/kendo-ui/esm/kendo.data.js'
+const kendo = window.kendo;
+const jQuery =window.kendo.jQuery;
+const $ = jQuery;
+
+ko.kendo = ko.kendo || {};
 
 //import "knockout-kendo-core.js"
 
@@ -122,5 +118,3 @@
 //import "knockout-kendoSparkline.js"
 
 //import "knockout-kendoStockChart.js"
-
-}));
